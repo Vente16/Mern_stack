@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+    nodejs-app:
+        
+        container_name: nodejsserver
+        hostname: nodejsserver
+        context : ./backend
+        restart: always
+        build: .
+        ports:
+            - "3000:3000"
+        networks:
+            - example-net
+
+        depends_on:
+            - mongo
+
+        volumes:
+           - /app/node_modules
+           - ./server:/dist    
+    mongo:
+        container_name: mongo
+        image: mongo
+        volumes:
+            - ./data:/data/db
+        ports:
+            - "27017:27017"
+        networks:
+            - example-net
+    nginx:
+        build:
+            context: ./
+        container_name: nginx
+        hostname: nginx
+        ports:
+            - "80:80"
+        depends_on:
+            - nodejs-app
+        networks:
+            - example-net
+
+networks:
+    example-net:
+        external: true

@@ -1,0 +1,16 @@
+FROM node:18.13.0-alpine
+
+WORKDIR /app-dockerized
+
+COPY package*.json .
+#COPY .nvmrc .
+
+RUN npm install -g typescript
+RUN npm install && npm cache clean --force
+
+COPY . .
+
+EXPOSE 3000
+ENV NODE_ENV production
+#ENTRYPOINT ["powershell.exe"]
+CMD tsc && node dist/server.js
