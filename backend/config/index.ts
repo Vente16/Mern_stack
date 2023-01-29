@@ -22,10 +22,7 @@ const deepMerge = (target: IConfig, source: DeepPartial<IConfig>): IConfig => {
     return Object.keys(source).reduce(
       (output: IConfig, key: string) => ({
         ...output,
-        [key]:
-          isObject(source[key]) && key in target
-            ? deepMerge(target[key], source[key])
-            : source[key],
+        [key]: isObject(source[key]) && key in target ? deepMerge(target[key], source[key]) : source[key]
       }),
       { ...target }
     );
@@ -37,19 +34,19 @@ const config: IConfig = {
   environment: ENVIRONMENT,
   common: {
     logs: {
-      logging: logger.info,
+      logging: logger.info
     },
     api: {
       bodySizeLimit: process.env.API_BODY_SIZE_LIMIT,
       parameterLimit: process.env.API_PARAMETER_LIMIT,
-      port: process.env.PORT,
-    },
+      port: process.env.PORT
+    }
   },
   cors: {
     server: {
-      credentials: true,
-    },
-  },
+      credentials: true
+    }
+  }
 };
 
 const customConfig: IConfig = deepMerge(config, environmentConfig);

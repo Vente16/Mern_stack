@@ -1,6 +1,6 @@
 import { body } from 'express-validator';
 
-export const userDataValidateChainMethod = [
+export const studentValidation = [
   body('name')
     .exists({ checkFalsy: true })
     .withMessage('Student name is required')
@@ -38,5 +38,5 @@ export const userDataValidateChainMethod = [
     .withMessage('subject subject can not be empty'),
   body('subjects.*.grades.*')
     .isNumeric()
-    .withMessage('subject grades must be an array of numbers'),
+    .withMessage('subject grades must be an array of numbers')
 ];

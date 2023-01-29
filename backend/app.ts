@@ -11,22 +11,18 @@ import { errorHandlerMiddleware } from './app/middlewares/error-handler';
 import connection from './app/database/connection';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const {
-  expressMiddleware,
-  expressRequestIdMiddleware,
-} = require('express-wolox-logger');
+const { expressMiddleware, expressRequestIdMiddleware } = require('express-wolox-logger');
 
 const DEFAULT_BODY_SIZE_LIMIT = 1024 * 1024 * 10;
 const DEFAULT_PARAMETER_LIMIT = 10000;
 
 const bodyParserJsonConfig: OptionsJson = {
-  limit: Number(config.common.api.bodySizeLimit) || DEFAULT_BODY_SIZE_LIMIT,
+  limit: Number(config.common.api.bodySizeLimit) || DEFAULT_BODY_SIZE_LIMIT
 };
 
 const bodyParserUrlencodedConfig: OptionsUrlencoded = {
   extended: true,
-  parameterLimit:
-    Number(config.common.api.parameterLimit) || DEFAULT_PARAMETER_LIMIT,
+  parameterLimit: Number(config.common.api.parameterLimit) || DEFAULT_PARAMETER_LIMIT
 };
 
 const app = express();
