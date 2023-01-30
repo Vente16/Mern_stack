@@ -4,7 +4,7 @@ import { createServer } from 'http';
 import app from './app';
 import config from './config';
 
-const defaultPort = 5000;
+const defaultPort = process.env.PORT || 5000;
 
 const port = config.common.api.port || defaultPort;
 
