@@ -2,10 +2,6 @@
   "name": "encryptpdf-project",
   "version": "1.0",
   "description": "Example to encrypt a PDF file",
-  "engines": {
-    "node": ">=18.3.0",
-    "npm": ">=8.11.0"
-  },
   "scripts": {
     "build": "tsc",
     "console": "tsc && node --experimental-repl-await ./dist/console.js",
