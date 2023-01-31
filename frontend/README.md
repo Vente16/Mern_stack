@@ -18,4 +18,8 @@ Your app should be runing in http://localhost:5173/
 
 ### Demo
 
-![demogif](https://github.com/Vente16/Mern_stack/tree/master/frontend/blob/master/demo.gif)
+![demogif](https://github.com/Vente16/Mern_stack/blob/master/frontend/demo.gif)
+
+
+![check demo here](https://mern-stack-16b4.vercel.app)
+
