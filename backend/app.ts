@@ -29,7 +29,7 @@ const app = express();
 
 connection();
 
-app.use(cors(config.cors.server));
+app.use(cors());
 
 // Client must send "Content-Type: application/json" header
 app.use(bodyParser.json(bodyParserJsonConfig));
