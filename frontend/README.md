@@ -16,7 +16,7 @@ npm run dev or yarn dev
 
 Your app should be runing in http://localhost:5173/
 
-![app production](ttps://mern-stack-16b4.vercel.app)
+App production: https://mern-stack-16b4.vercel.app
 
 ### Demo
 
