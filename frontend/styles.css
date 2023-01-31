@@ -1,0 +1,11 @@
+html,
+body {
+  box-sizing: border-box;
+}
+body {
+  margin: 0 auto;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
